@@ -1,0 +1,14 @@
+{
+  "local":{
+    "server": "localhost",
+    "database": "postgres",
+    "username": "postgres",
+    "password": "K!d5ArE@v1L"
+  },
+  "development":{
+    "database": "postgres"
+  },
+  "production":{
+    "database": "postgres"
+  }
+}
