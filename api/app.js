@@ -7,7 +7,6 @@ const app = express();
 const compression = require('compression');
 app.use(compression());
 const bodyParser = require("body-parser"),
-    environment = require("./config/environment"),
     path = require("path");
 
 app.use(bodyParser.urlencoded({extended: true}));

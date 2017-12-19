@@ -2,11 +2,17 @@
  * Created by Joshua.Austill on 12/18/2017.
  */
 const router = require("express").Router();
+const albumContext = require(`${__appRoot}/contexts/albumContext.js`);
 
 router.route("/artist")
-    .get((req, res) => {
+    .get(async (req, res) => {
         const id = req.query.id;
-        res.json({ "Requested albums by artist id": id});
+        try {
+            const albums = await albumContext.getAlbumsByArtistId(id);
+            res.json(albums);
+        } catch (e) {
+            res.json({ "Error": e });
+        }
     });
 
 module.exports = router;
